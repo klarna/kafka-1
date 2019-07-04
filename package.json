@@ -19,7 +19,8 @@
     "lodash": "=4.16.4",
     "murmur-hash-js": "^1.0.0",
     "nice-simple-logger": "^1.0.1",
-    "wrr-pool": "^1.0.3"
+    "wrr-pool": "^1.0.3",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -40,12 +41,15 @@
     "eslint": "eslint .",
     "posttest": "npm run coverage",
     "pretest": "npm run eslint",
-    "test": "istanbul cover --report lcov --report text --report html ./node_modules/mocha/bin/_mocha \"test/**/*.js\""
+    "test": "istanbul cover --report lcov --report text --report html ./node_modules/mocha/bin/_mocha \"test/**/*.js\"",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/oleksiyk/kafka.git"
   },
   "readmeFilename": "README.md",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
